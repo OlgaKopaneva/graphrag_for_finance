@@ -1,0 +1,44 @@
+[project]
+name = "graphrag-for-finance"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "OlgaKopaneva",email = "olg-kopaneva@yandex.ru"}
+]
+readme = "README.md"
+requires-python = ">=3.10,<4.0"
+dependencies = [
+    "torch (>=2.6.0,<3.0.0)",
+    "torchvision (>=0.21.0,<0.22.0)",
+    "torchaudio (>=2.6.0,<3.0.0)",
+    "pypdf2 (>=3.0.1,<4.0.0)",
+    "sentence-transformers (>=4.1.0,<5.0.0)",
+    "faiss-cpu (>=1.11.0,<2.0.0)",
+    "rank-bm25 (>=0.2.2,<0.3.0)",
+    "pandas (>=2.3.0,<3.0.0)",
+    "numpy (==1.26.4)",
+    "langchain (==0.2.0)",
+    "langchain-community (==0.2.0)",
+    "cffi (>=1.17.1,<2.0.0)",
+    "rdflib (>=7.1.4,<8.0.0)",
+    "evaluate (>=0.4.3,<0.5.0)",
+    "datasets (>=3.6.0,<4.0.0)",
+    "accelerate (>=1.8.0,<2.0.0)",
+    "rouge-score (>=0.1.2,<0.2.0)",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[[tool.poetry.source]]
+name = "pytorch-gpu"
+url = "https://download.pytorch.org/whl/cu124"
+priority = "explicit"
+
+
+[tool.poetry.dependencies]
+torch = {source = "pytorch-gpu"}
+torchvision = {source = "pytorch-gpu"}
+torchaudio = {source = "pytorch-gpu"}
