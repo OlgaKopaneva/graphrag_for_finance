@@ -1,6 +1,8 @@
 # ModifiedGraphRAG Implementation
 
-A modified GraphRAG system that uses a knowledge graph (ontology) as navigation to more relevant document chunks and .
+A modified GraphRAG system that uses a knowledge graph (ontology) as navigation to more relevant document chunks. Combines two sources for context generation: chunks annotated by the knowledge graph (GraphRAG) and those obtained by the standard RAG approach.  
+
+**Report**: [Report.pdf](Report.pdf)
 
 ## System architecture
 
@@ -108,3 +110,17 @@ python -m graph_rag.evaluation.evaluate_graphrag
 ```bash
 python -m graph_rag.scripts.generate_answer_cli "What is EBITDA?" graph_rag 10
 ```
+
+## Data
+
+### The Financial Industry Business Ontology (FIBO): 
+
+An international formal ontology originally created by the EDM Council (a not-for-profit, cross-industry data and analytics management association) to provide a common framework for financial contracts worldwide. It emerged as a result of the need to standardise terminology for regulatory reporting and other analytics globally, which was identified during the 2008 financial crisis. It was first published in 2014 and has grown and improved continuously since then. Changes are made on an ongoing basis by several domain-specific teams (e.g. securities, derivatives and indices) and are available on FIBO [GitHub](https://github.com/edmcouncil/fibo) and special [web-page](https://spec.edmcouncil.org/fibo/), with formal updates published quarterly.\\
+	
+FIBO is developed as an ontology in the Web Ontology Language (OWL). OWL is currently the World Wide Web Consortium's (W3C) recommended language for ontologies. The basic elements of the language are properties, classes, and constraints. Using logic ensures that each FIBO concept is formulated in a single-valued way, making it readable by both humans and machines. Since January 2020, the community has been developing FIBO in an open process to provide a machine-readable, unambiguous standard for financial terminology.\\
+	
+The ontology includes 10 thematic ontologies on the main sections of finance, contains 1159 classes (entities), 764 relations, about 15,000 axioms and 52 annotations.\\
+
+### Domain-specific texts
+	
+For this part was used materials for preparation for financial exams - this source was chosen because it is the most structured, standardised and covers in a single structure the key areas of financial science, also it's recognised by the professional community.
